@@ -1,0 +1,49 @@
+﻿@model EntregaSprint3.Models.Produto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<link rel="stylesheet" href="~/css/pais.css" />
+
+<button class="button">
+    Editar Produto
+</button>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="NomeProduto" class="control-label"></label>
+                <input asp-for="NomeProduto" class="form-control" />
+                <span asp-validation-for="NomeProduto" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <label asp-for="TipoProdutoId" class="control-label"></label>
+                <select asp-for="TipoProdutoId" class="form-control" asp-items="ViewBag.TipoProdutoId"></select>
+                <span asp-validation-for="TipoProdutoId" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <label asp-for="FornecedorId" class="control-label"></label>
+                <select asp-for="FornecedorId" class="form-control" asp-items="ViewBag.FornecedorId"></select>
+                <span asp-validation-for="FornecedorId" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <input type="submit" value="Confirmar Alteração" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div><br />
+
+<div>
+    <button>
+        <a class="adicionarp" asp-action="Index">Voltar</a>
+    </button>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

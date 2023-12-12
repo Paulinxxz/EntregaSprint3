@@ -1,0 +1,52 @@
+﻿@model IEnumerable<EntregaSprint3.Models.EntradaProduto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="~/css/pais.css" />
+
+<button class="button">
+    Entrada de Produtos
+</button>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Produto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEntrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeEntrada)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produto.NomeProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEntrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeEntrada)
+            </td>
+                <td class="fulldireita">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> 
+             </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <button>
+        <a class="adicionarp" asp-action="Create">Adicionar</a>
+    </button>
+</div>

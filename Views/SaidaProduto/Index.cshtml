@@ -1,0 +1,71 @@
+﻿@model IEnumerable<EntregaSprint3.Models.SaidaProduto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" href="~/css/pais.css" />
+
+<button class="button">
+    Saida Produto
+</button>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Produto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataSaidaProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeSaidaProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoSaida)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produto.NomeProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSaidaProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeSaidaProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario.NomeUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.NomeCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoSaida.TipoSaidaDescricao)
+            </td>
+                <td class="fulldireita">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <button>
+        <a class="adicionarp" asp-action="Create">Adicionar</a>
+    </button>
+</div>

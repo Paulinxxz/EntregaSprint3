@@ -1,0 +1,44 @@
+﻿@model EntregaSprint3.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Details";
+}
+<link rel="stylesheet" href="~/css/pais.css" />
+
+<button class="button">
+    Detalhes
+</button>
+<br>
+<br>
+<table class="table">
+    <thead>
+    <tr class="row">
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeFornecedor)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomeFornecedor)
+        </th>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailFornecedor)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmailFornecedor)
+        </th>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CnpjFornecedor)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.CnpjFornecedor)
+        </th>
+    </tr>
+    </thead>
+</table>
+<div>
+    <button class="buttonazul">
+        <a class="adicionarp" asp-action="Edit" asp-route-id="@Model?.Id">Editar Fornecedor</a>
+    </button>
+    <button>
+        <a class="adicionarp" asp-action="Index">Voltar</a>
+    </button>
+</div>

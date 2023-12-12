@@ -1,0 +1,36 @@
+﻿@model EntregaSprint3.Models.TipoProduto
+
+@{
+    ViewData["Title"] = "Create";
+}
+<link rel="stylesheet" href="~/css/pais.css" />
+
+<button class="button">
+    Adicionar Tipo Produto
+</button>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TipoProdutoDescricao" class="control-label"></label>
+                <input asp-for="TipoProdutoDescricao" class="form-control" />
+                <span asp-validation-for="TipoProdutoDescricao" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <input type="submit" value="Criar Tipo Produto" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div><br />
+<div>
+    <button>
+        <a class="adicionarp" asp-action="Index">Voltar</a>
+    </button>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

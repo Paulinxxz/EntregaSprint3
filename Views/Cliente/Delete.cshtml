@@ -1,0 +1,75 @@
+﻿@model EntregaSprint3.Models.Cliente
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<link rel="stylesheet" href="~/css/pais.css" />
+<button class="button">
+    Excluir Cliente
+</button>
+<br />
+<span>Você tem certeza que deseja excluir isto?</span>
+<br>
+<br>
+<table class="table">
+    <thead>
+    <tr class="row">
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeCliente)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomeCliente)
+        </th>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataNascimento)
+        </th>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CpfCliente)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.CpfCliente)
+        </th>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EnderecoCliente)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.EnderecoCliente)
+        </th>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroCasaCliente)
+        </th>
+        <th class = "col-sm-10">
+           @Html.DisplayFor(model => model.NumeroCasaCliente)
+        </th>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BairroCliente)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.BairroCliente)
+        </th>
+        <th
+            class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cidade.CidadeNome)
+        </th>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TelefoneCliente)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.TelefoneCliente)
+        </th>
+    </tr>
+    </thead>
+    </table>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Excluir" class="btn btn-danger" />
+    <button>
+        <a class="adicionarp" asp-action="Index">Voltar</a>
+    </button>
+</form>

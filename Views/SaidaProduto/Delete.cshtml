@@ -1,0 +1,66 @@
+﻿@model EntregaSprint3.Models.SaidaProduto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<link rel="stylesheet" href="~/css/pais.css" />
+<button class="button">
+    Excluir Saida Produto
+</button>
+<br />
+<span>Você tem certeza que deseja excluir isto?</span>
+<br>
+<br>
+<table class="table">
+    <thead>
+    <tr class="row">
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Produto)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.Produto.NomeProduto)
+        </th>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataSaidaProduto)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataSaidaProduto)
+        </th>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QuantidadeSaidaProduto)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.QuantidadeSaidaProduto)
+        </th>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Usuario)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.NomeUsuario)
+        </th>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cliente)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cliente.NomeCliente)
+        </th>
+        <th
+            class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoSaida)
+        </th>
+        <th
+            class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoSaida.TipoSaidaDescricao)
+        </th>
+    </tr>
+
+    </thead>
+</table>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Excluir" class="btn btn-danger" />
+    <button>
+        <a class="adicionarp" asp-action="Index">Voltar</a>
+    </button>
+</form>

@@ -1,0 +1,33 @@
+﻿@model EntregaSprint3.Models.TipoProduto
+
+@{
+    ViewData["Title"] = "Details";
+}
+<link rel="stylesheet" href="~/css/pais.css" />
+
+<button class="button">
+    Detalhes
+</button>
+<br>
+<br>
+<table class="table">
+    <thead>
+    <tr class="row">
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoProdutoDescricao)
+        </th>
+        <th class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoProdutoDescricao)
+        </th>
+    </tr>
+    </thead>
+</table>
+<div>
+    <button class="buttonazul">
+        <a class="adicionarp" asp-action="Edit" asp-route-id="@Model?.Id">Editar Tipo Produto</a>
+    </button>
+    <button>
+        <a class="adicionarp" asp-action="Index">Voltar</a>
+    </button>
+</div>
+

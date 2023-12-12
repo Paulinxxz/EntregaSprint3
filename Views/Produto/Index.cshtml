@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EntregaSprint3.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="~/css/pais.css" />
+
+<button class="button">
+    Produtos
+</button>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeEstoque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fornecedor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeEstoque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoProduto.TipoProdutoDescricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fornecedor.NomeFornecedor)
+            </td>
+                <td class="fulldireita">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <button>
+        <a class="adicionarp" asp-action="Create">Adicionar</a>
+    </button>
+</div>

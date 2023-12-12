@@ -1,0 +1,44 @@
+﻿@model EntregaSprint3.Models.Cidade
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<link rel="stylesheet" href="~/css/pais.css" />
+
+<button class="button">
+    Editar Cidade
+</button>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CidadeNome" class="control-label"></label>
+                <input asp-for="CidadeNome" class="form-control" />
+                <span asp-validation-for="CidadeNome" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <label asp-for="EstadoId" class="control-label"></label>
+                <select asp-for="EstadoId" class="form-control" asp-items="ViewBag.EstadoId"></select>
+                <span asp-validation-for="EstadoId" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <input type="submit" value="Confirmar Alteração" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div><br />
+
+<div>
+    <button>
+        <a class="adicionarp" asp-action="Index">Voltar</a>
+    </button>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

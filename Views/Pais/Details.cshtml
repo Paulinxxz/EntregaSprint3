@@ -1,0 +1,32 @@
+﻿@model EntregaSprint3.Models.Pais
+
+@{
+    ViewData["Title"] = "Details";
+}
+<link rel="stylesheet" href="~/css/pais.css" />
+
+<button class="button">
+    Detalhes
+</button>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PaisNome)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.PaisNome)
+            </th>
+        </tr>
+    </thead>
+</table>
+<div>
+    <button class="buttonazul">
+        <a class="adicionarp" asp-action="Edit" asp-route-id="@Model?.Id">Editar País</a>
+    </button>
+    <button>
+        <a class="adicionarp" asp-action="Index">Voltar</a>
+    </button>
+</div>

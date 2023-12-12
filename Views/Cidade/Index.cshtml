@@ -1,0 +1,47 @@
+﻿@model IEnumerable<EntregaSprint3.Models.Cidade>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="~/css/pais.css" />
+
+<button class="button">
+    Cidades
+</button>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CidadeNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CidadeNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado.EstadoNome)
+            </td>
+                <td class="fulldireita">
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <button>
+        <a class="adicionarp" asp-action="Create">Adicionar</a>
+    </button>
+</div>
